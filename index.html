@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>แจ้งปัญหา IT Helpdesk</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
   <style>
-    body {
-      background-color: #000033;
-      font-family: 'Kanit', sans-serif;
-    }
-
-    label {
-      color: white;
-    }
-
-    .container {
-      max-width: 600px;
-    }
+    body { background-color: #000033; font-family: 'Kanit', sans-serif; }
+    label { color: white; }
+    .container { max-width: 600px; }
   </style>
 </head>
-
 <body>
-  <div align="center" class="mt-3">
-    <img src="https://img2.pic.in.th/pic/af17ea5feab02084a5a9861e30005ec6.png" width="416">
+  <div class="text-center mt-4">
+    <img src="https://img2.pic.in.th/pic/af17ea5feab02084a5a9861e30005ec6.png" width="416" />
   </div>
 
   <div class="container mt-4">
@@ -35,37 +24,36 @@
         <h3 class="text-light">แจ้งปัญหา IT Helpdesk</h3>
       </div>
       <div class="mb-3">
-        <label for="name">ชื่อ (ผู้ติดต่อ)</label>
-        <input type="text" id="name" class="form-control" required>
+        <label for="name">ชื่อ</label>
+        <input type="text" id="name" class="form-control" required />
         <div class="invalid-feedback">กรุณากรอกชื่อ</div>
       </div>
       <div class="mb-3">
-        <label for="phone">เบอร์ติดต่อ</label>
-        <input type="text" id="phone" class="form-control" required>
+        <label for="phone">เบอร์โทร</label>
+        <input type="text" id="phone" class="form-control" required />
         <div class="invalid-feedback">กรุณากรอกเบอร์</div>
       </div>
       <div class="mb-3">
-        <label for="device">อุปกรณ์ที่มีปัญหา</label>
+        <label for="device">อุปกรณ์</label>
         <select id="device" class="form-select" required>
           <option value="">-- กรุณาเลือก --</option>
           <option>Computer PC</option>
           <option>Notebook</option>
           <option>MacBook</option>
-          <option>อื่นๆ</option>
         </select>
         <div class="invalid-feedback">กรุณาเลือกอุปกรณ์</div>
       </div>
       <div class="mb-3">
-        <label for="problem">ปัญหาที่พบ</label>
+        <label for="problem">ปัญหา</label>
         <select id="problem" class="form-select" required>
           <option value="">-- กรุณาเลือก --</option>
-          <option>WiFi ไม่สามารถใช้งานได้</option>
           <option>VPN ใช้งานไม่ได้</option>
+          <option>WiFi ไม่เสถียร</option>
           <option>โปรแกรม Error</option>
         </select>
         <div class="invalid-feedback">กรุณาเลือกปัญหา</div>
       </div>
-      <div class="mb-4">
+      <div class="mb-3">
         <label for="place">แผนก</label>
         <select id="place" class="form-select" required>
           <option value="">-- กรุณาเลือก --</option>
@@ -95,10 +83,8 @@
 
     $(document).ready(() => {
       liff.init({ liffId: '1657934014-yMv0gDop', withLoginOnExternalBrowser: true })
-        .then(() => console.log('LIFF initialized'))
-        .catch(err => {
-          Swal.fire({ icon: 'error', title: 'LIFF error', text: err.message });
-        });
+        .then(() => console.log('LIFF Initialized'))
+        .catch(err => Swal.fire({ icon: 'error', title: 'LIFF error', text: err.message }));
     });
 
     function submitForm() {
@@ -107,13 +93,13 @@
       const uid = liff.getDecodedIDToken()?.sub || '';
       if (!uid) {
         $.LoadingOverlay('hide');
-        Swal.fire({ icon: 'error', title: 'ไม่พบ LINE User ID', text: 'กรุณาเข้าสู่ระบบใหม่' });
+        Swal.fire({ icon: 'error', title: 'ไม่พบ LINE User ID' });
         return;
       }
 
       const data = {
         opt: 'savedata',
-        uid,
+        uid: uid,
         name: $('#name').val(),
         phone: $('#phone').val(),
         device: $('#device').val(),
@@ -124,22 +110,59 @@
       $.ajax({
         method: 'POST',
         url: scriptUrl,
-        data,
+        data: data,
         dataType: 'json',
         success: function (res) {
           $.LoadingOverlay('hide');
           if (res.status === 'success') {
             Swal.fire({ icon: 'success', title: 'แจ้งซ่อมเรียบร้อย' }).then(() => {
-              liff.sendMessages([{
-                type: 'text',
-                text: `✅ แจ้งซ่อมเรียบร้อย\\nรหัสงาน: ${res.id}\\nอุปกรณ์: ${data.device}\\nปัญหา: ${data.problem}`
-              }]).then(() => liff.closeWindow());
+              const flex = {
+                type: 'flex',
+                altText: 'แจ้งซ่อมเรียบร้อย',
+                contents: {
+                  type: 'bubble',
+                  body: {
+                    type: 'box',
+                    layout: 'vertical',
+                    spacing: 'md',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '✅ แจ้งซ่อมเรียบร้อย',
+                        weight: 'bold',
+                        size: 'lg',
+                        align: 'center'
+                      },
+                      { type: 'separator', margin: 'md' },
+                      {
+                        type: 'text',
+                        text: 'รหัสงาน: ' + res.id,
+                        size: 'md'
+                      },
+                      {
+                        type: 'text',
+                        text: 'อุปกรณ์: ' + data.device,
+                        size: 'sm',
+                        wrap: true
+                      },
+                      {
+                        type: 'text',
+                        text: 'ปัญหา: ' + data.problem,
+                        size: 'sm',
+                        wrap: true
+                      }
+                    ]
+                  }
+                }
+              };
+              liff.sendMessages([flex]).then(() => liff.closeWindow());
             });
           } else {
-            Swal.fire({ icon: 'error', title: 'เกิดข้อผิดพลาดขณะบันทึก' });
+            Swal.fire({ icon: 'error', title: 'บันทึกข้อมูลล้มเหลว' });
           }
         },
-        error: function () {
+        error: function (err) {
+          console.error(err);
           $.LoadingOverlay('hide');
           Swal.fire({ icon: 'error', title: 'ไม่สามารถเชื่อมต่อได้' });
         }
@@ -159,5 +182,4 @@
     })();
   </script>
 </body>
-
 </html>
