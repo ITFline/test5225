@@ -1,582 +1,151 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="white=device-white, initial-scale=1.0">
-  <title> IT Helpdesk Specialists</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Helpdesk Specialists</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: Kanit, sans-serif;
       background-color: #000033;
     }
-
     label {
       color: white;
     }
-
     .container {
       max-width: 600px;
     }
   </style>
 </head>
 
-<html>
-
 <body>
   <div align="center">
-    <img border="0" src="https://img2.pic.in.th/pic/af17ea5feab02084a5a9861e30005ec6.png" alt="coala" width="416" height="120">
+    <img src="https://img2.pic.in.th/pic/af17ea5feab02084a5a9861e30005ec6.png" width="416" height="120">
   </div>
-</body>
 
-</html>
-
-
-<body>
   <div class="container">
     <form id="myForm" class="needs-validation my-4" novalidate>
-      <div class="row">
-        <div class="col-14 text-center">
-          <p class="h2 text-light">แจ้งปัญหา IT Helpdesk Specialists</p>
-        </div>
+      <div class="text-center">
+        <p class="h2 text-light">แจ้งปัญหา IT Helpdesk Specialists</p>
       </div>
-      <div class="row justify-content-start g-3">
-        <div class="col-12">
-          <label for="name">ชื่อ (ผู้ติดต่อ)</label>
-          <input type="text" id="name" name="name" class="form-control" required>
-          <div class="invalid-feedback">
-            กรุณากรอกชื่อ-สกุล
-          </div>
-        </div>
-        <div class="col-12">
-          <label for="phone">เบอร์ติดต่อ (ที่สามารถติดต่อได้)</label>
-          <input type="text" id="phone" name="phone" class="form-control" required>
-          <div class="invalid-feedback">
-            กรุณากรอกเบอร์โทร
-          </div>
-        </div>
-        <div class="block form-group">
-          <label for="device">*อุปกรณ์ที่มีปัญหา*</label>
-          <select id="device">
-
-            </option>
-            <option value="--กรุณาเลือก-- ">
-              ----------------กรุณาเลือก-----------------
-            </option>
-            <option value="Computer PC ">
-              ▫️ Computer PC
-            </option>
-            <option value="Notebook">
-              ▫️ Notebook
-            </option>
-            <option value="Macintosh">
-              ▫️ Macintosh
-            </option>
-            <option value="MacBook">
-              ▫️ MacBook
-            </option>
-
-
-          </select>
-        </div>
+      <div class="mb-3">
+        <label for="name">ชื่อ (ผู้ติดต่อ)</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+        <div class="invalid-feedback">กรุณากรอกชื่อ-สกุล</div>
       </div>
-      <br>
-      <div class="block form-group">
-        <label for="problem">*แจ้งปัญหาการใช้งาน*</label>
-        <select id="problem">
-
-          </option>
-          <option value="------- ">
-            -----------เลือกหัวข้อที่คุณต้องการ-----------
-
-          </option>
-          <option value="โปรแกรม Error ">
-            ▫️ โปรแกรม Error
-          </option>
-          <option value="เข้าใช้งานไดร์กลางของแผนกไม่ได้">
-            ▫️เข้าใช้งานไดร์กลางของแผนกไม่ได้
-          </option>
-          <option value="Remote Desktop เข้าใช้งานไม่ได้ ">
-            ▫️ Remote Desktop เข้าใช้งานไม่ได้
-          </option>
-          <option value="Parallels เข้าใช้งานไม่ได้ ">
-            ▫️ Parallels เข้าใช้งานไม่ได้
-          </option>
-          <option value="Microsoft  ไม่สามารถใช้งานได้">
-            ▫️Microsoft ไม่สามารถใช้งานได้
-          </option>
-          <option value=" Windows แจ้งActivate">
-            ▫️ Windowsแจ้งActivate
-          </option>
-          <option value=" Microsoft office แจ้งActivate">
-            ▫️ Microsoft office แจ้งActivate
-          </option>
-          <option value="Mail@comseven.com ไม่สามารถใช้งานได้">
-            ▫️ Mail@comseven.com ไม่สามารถใช้งานได้
-          </option>
-          <option value=" ลืมรหัสผ่านเมล์">
-            ▫️ ลืมรหัสผ่านเมล์
-          </option>
-          <option value="เมล์ข้อความ ส่งออก/รับเข้า ไม่ได้">
-            ▫️ เมล์ ข้อความ ส่งออก/รับเข้า ไม่ได้
-          </option>
-          <option value="Mail เต็ม">
-            ▫️ Mail เต็ม
-          </option>
-          <option value="เครื่องคอมพิวเตอร์ไม่สามารถใช้งาน">
-            ▫️ เครื่องคอมพิวเตอร์ไม่สามารถใช้งาน
-          </option>
-          <option value="เครื่องค้าง จอดำ เปิดไม่ติด">
-            ▫️ เครื่องค้าง จอดำ เปิดไม่ติด
-          </option>
-          <option value="VPN ไม่สามารถใช้งานได้">
-            ▫️VPN ไม่สามารถใช้งานได้
-          </option>
-          <option value="เชื่อมต่อ VPN แล้วใช้งานโปรแกรมไม่ได้">
-            ▫️ เชื่อมต่อ VPN แล้วใช้งานโปรแกรมไม่ได้
-          </option>
-          <option value="VPN ขึ้นให้ใส่รหัสผ่าน">
-            ▫️ VPN ขึ้นให้ใส่รหัสผ่าน
-          </option>
-          <option value="อุปกรณ์ต่อพ่วงไม่สามารถใช้งานได้ Printer">
-            ▫️ อุปกรณ์ต่อพ่วงไม่สามารถใช้งานได้ (Printer)
-          </option>
-          <option value="Printer Fuji ไม่สามารถใช้งานได้">
-            ▫️ Printer Fuji ไม่สามารถใช้งานได้
-          </option>
-          <option value="Printer Termal ไม่สามารถใช้งานได้">
-            ▫️ Printer Termal ไม่สามารถใช้งานได้
-          </option>
-          <option value="Printer EPSON ไม่สามารถใช้งานได้">
-            ▫️ Printer EPSON ไม่สามารถใช้งานได้
-          </option>
-          <option value="Printer EPSON ปริ้นไม่ตรง">
-            ▫️ Printer EPSON ปริ้นไม่ตรง
-          </option>
-          <option value="Printer สติ๊กเกอร์ไม่สามารถใช้งานได้">
-            ▫️ Printer สติ๊กเกอร์ไม่สามารถใช้งานได้
-          </option>
-          <option value="แชร์ Printer">
-            ▫️ แชร์ Printer
-          </option>
-          <option value="ห้องประชุมไม่สามารถใช้งานได้">
-            ▫️ห้องประชุมไม่สามารถใช้งานได้
-          </option>
-          <option value="เชื่อมต่อจอ TV / โปรเจคเตอร์ ไม่ขึ้นภาพ">
-            ▫️ เชื่อมต่อจอ TV / โปรเจคเตอร์ ไม่ขึ้นภาพ
-          </option>
-          <option value="โปรแกรม ITEC ไม่สามารถใช้งานได้">
-            ▫️โปรแกรม ITEC ไม่สามารถใช้งานได้
-          </option>
-          <option value="ITEC Error / Expired /ไม่อนุญาติให้เข้าใช้งาน">
-            ▫️ ITEC Error / Expired / ไม่อนุญาติให้เข้าใช้งาน
-          </option>
-          <option value="โปรแกรม HRMI8/ESS ไม่สามารถใช้งานได้">
-            ▫️ โปรแกรม HRMI8/ESS ไม่สามารถใช้งานได้
-          </option>
-          <option value="HRMI8/ESS Error">
-            ▫️ HRMI8/ESS Error
-          </option>
-          <option value="อัพเดต HRMI8 ไม่ได้">
-            ▫️ อัพเดต HRMI8 ไม่ได้
-          </option>
-          <option value="โปรแกรม Oracle APS ไม่สามารถใช้ได้">
-            ▫️โปรแกรม Oracle APS ไม่สามารถใช้ได้
-          </option>
-          <option value="โปรแกรม Oracle APSปริ้นไม่ออก">
-            ▫️ โปรแกรม Oracle APSปริ้นไม่ออก
-          </option>
-          <option value="เข้าหน้า Log in Oracle ไม่ได้">
-            ▫️ เข้าหน้า Log in Oracle ไม่ได้
-          </option>
-          <option value="โปรแกรม COM7PRO ไม่สามารถใช้งานได้">
-            ▫️โปรแกรม COM7PRO ไม่สามารถใช้งานได้
-          </option>
-          <option value="COM7PRO Error">
-            ▫️ COM7PRO Error
-          </option>
-          <option value="อัพเดต COM7PRO ไม่ได้">
-            ▫️ อัพเดต COM7PRO ไม่ได้
-          </option>
-          <option value="Internet / WiFi ไม่สามารถใช้งานได้">
-            ▫️Internet / WiFi ไม่สามารถใช้งานได้
-          </option>
-          <option value="LAN ไม่สามารถใช้งานได้">
-            ▫️ LAN ไม่สามารถใช้งานได้
-          </option>
-          <option value="จำรหัส WiFi ไม่ได้">
-            ▫️ จำรหัส WiFi ไม่ได้
-          </option>
-          <option value="WiFi เชื่อมต่อไม่ได้">
-            ▫️ WiFi เชื่อมต่อไม่ได้
-          </option>
-          <option value="WiFi ช้า">
-            ▫️ WiFi ช้า
-
-          </option>
-          <option value="--กรุณาเลือก-- ">
-            -------------------------
-
-
-          </option>
+      <div class="mb-3">
+        <label for="phone">เบอร์ติดต่อ</label>
+        <input type="text" id="phone" name="phone" class="form-control" required>
+        <div class="invalid-feedback">กรุณากรอกเบอร์โทร</div>
+      </div>
+      <div class="mb-3">
+        <label for="device">อุปกรณ์ที่มีปัญหา</label>
+        <select id="device" name="device" class="form-select" required>
+          <option value="">-- กรุณาเลือก --</option>
+          <option>Computer PC</option>
+          <option>Notebook</option>
+          <option>Macintosh</option>
+          <option>MacBook</option>
         </select>
-        <br>
-        <br>
-        <div class="block form-group">
-          <label for="place">*แผนก*🔎</label>
-          <select id="place">
-
-            </option>
-            <option value="--กรุณาเลือก-- ">
-              ----------------กรุณาเลือก----------------
-            </option>
-            <option value="  General Affairs ">
-              ▫️ General Affairs
-            </option>
-            <option value=" call center ">
-              ▫️ call center
-            </option>
-            <option value=" Operation Expense Administrative">
-              ▫️ Operation Expense Administrative
-            </option>
-            <option value=" Operation Standard">
-              ▫️ Operation Standard
-            </option>
-            <option value=" Service Center">
-              ▫️ Service Center
-            </option>
-            <option value="Service Management">
-              ▫️ Service Management
-            </option>
-            <option value="Banana Franchise">
-              ▫️ Banana Franchise
-            </option>
-            <option value="Business Development">
-              ▫️ Business Development
-            </option>
-            <option value="E-Commerce">
-              ▫️ E-Commerce
-            </option>
-            <option value="Education and Enterprise">
-              ▫️ Education and Enterprise
-            </option>
-            <option value="Finance">
-              ▫️ Finance
-            </option>
-            <option value="HQ Staff Coach">
-              ▫️ HQ Staff Coach
-            </option>
-            <option value="Human Resources Management">
-              ▫️ Human Resources Management
-            </option>
-            <option value="HRD">
-              ▫️ HRD
-            </option>
-            <option value="iCare Operation">
-              ▫️ iCare Operation
-            </option>
-            <option value="Innovation Development">
-              ▫️ Innovation Development
-            </option>
-            <option value="IT Facilities">
-              ▫️ IT Facilities
-            </option>
-            <option value="Marketing">
-              ▫️ Marketing
-            </option>
-            <option value="Marketing Communication Banana ">
-              ▫️ Marketing Communication Banana
-            </option>
-            <option value="Merchandising Support">
-              ▫️ Merchandising Support
-            </option>
-            <option value="Online Fulfillment">
-              ▫️ Online Fulfillment
-            </option>
-            <option value="Operation Apple">
-              ▫️ Operation Apple
-            </option>
-            <option value="Operation Banana">
-              ▫️ Operation Banana
-            </option>
-            <option value="Operation Management">
-              ▫️ Operation Management
-            </option>
-            <option value="Product Management">
-              ▫️ Product Management
-            </option>
-            <option value="Retail Buyer">
-              ▫️ Retail Buyer
-            </option>
-            <option value="Retail Merchandiser">
-              ▫️ Retail Merchandiser
-            </option>
-            <option value="Sales & Service Management">
-              ▫️ Sales & Service Management
-            </option>
-            <option value="Sales & Retial Business Development">
-              ▫️ Sales & Retial Business Development
-            </option>
-            <option value="Talent Acquisition">
-              ▫️ Talent Acquisition
-            </option>
-            <option value="product managerment">
-              ▫️ product managerment
-            </option>
-            <option value="True Operation">
-              ▫️ True Operation
-            </option>
-            <option value="Warehouse">
-              ▫️ Warehouse
-            </option>
-            <option value="Account">
-              ▫️ Account
-            </option>
-            <option value="Management Information System">
-              ▫️ Management Information System
-            </option>
-            <option value="Thunderfinfin">
-              ▫️ Thunderfinfin
-            </option>
-            <option value="MIS Fin Tech">
-              ▫️ MIS Fin Tech
-            </option>
-            <option value="Operation BKK">
-              ▫️ Operation BKK
-            </option>
-            <option value="Operation Admin">
-              ▫️ Operation Admin
-            </option>
-            <option value="Operation Data Support">
-              ▫️ Operation Data Support
-            </option>
-            <option value="Operation Tesco Lotus">
-              ▫️ Operation Tesco Lotus
-            </option>
-            <option value="Marketing Communication Banana">
-              ▫️ Marketing Communication Banana
-            </option>
-            <option value="Marketing Communication Apple">
-              ▫️ Marketing Communication Apple
-            </option>
-            <option value="Marketing Communication BKK&Samsung">
-              ▫️ Marketing Communication BKK & Samsung
-            </option>
-            <option value="Online Marketing">
-              ▫️ Online Marketing
-            </option>
-            <option value="Rebate Center">
-              ▫️ Rebate Center
-            </option>
-            <option value="Executive Office ">
-              ▫️ Executive Office
-            </option>
-            <option value="Store Checker">
-              ▫️ Store Checker
-            </option>
-            <option value="Event">
-              ▫️ Event
-            </option>
-            <option value="Internal Audit">
-              ▫️ Internal Audit
-            </option>
-            <option value="Legal Office">
-              ▫️ Legal Office
-            </option>
-            <option value="NON IT">
-              ▫️ NON IT
-            </option>
-            <option value="InterVision">
-              ▫️ InterVision
-            </option>
-            <option value=" Adept ">
-              ▫️ Adept
-            </option>
-            <option value=" Double 7 ">
-              ▫️ Double 7
-            </option>
-            <option value=" Dr.Pharma ">
-              ▫️ Dr.Pharma
-            </option>
-            <option value=" SweeKnowHow ">
-              ▫️ SweeKnowHow
-            </option>
-            <option value=" 4Paws ">
-              ▫️ 4Paws.
-            </option>
-
-          </select>
-          <br>
-          <br>
-          <div class="col-12 text-center">
-            <button type="submit" class="btn btn-warning w-100"><i class="bi bi-send-fill"></i>&nbsp;แจ้งซ่อม</button>
-
-          </div>
+        <div class="invalid-feedback">กรุณาเลือกอุปกรณ์</div>
+      </div>
+      <div class="mb-3">
+        <label for="problem">แจ้งปัญหา</label>
+        <select id="problem" name="problem" class="form-select" required>
+          <option value="">-- กรุณาเลือก --</option>
+          <option>โปรแกรม Error</option>
+          <option>เข้าใช้งานไดร์กลางของแผนกไม่ได้</option>
+          <option>Remote Desktop เข้าใช้งานไม่ได้</option>
+          <option>VPN ไม่สามารถใช้งานได้</option>
+          <option>Internet / WiFi ไม่สามารถใช้งานได้</option>
+          <!-- เพิ่มหัวข้ออื่นๆ ได้ที่นี่ -->
+        </select>
+        <div class="invalid-feedback">กรุณาเลือกปัญหา</div>
+      </div>
+      <div class="mb-4">
+        <label for="place">แผนก</label>
+        <select id="place" name="place" class="form-select" required>
+          <option value="">-- กรุณาเลือก --</option>
+          <option>General Affairs</option>
+          <option>Call Center</option>
+          <option>IT Facilities</option>
+          <option>Marketing</option>
+          <option>Operation BKK</option>
+          <!-- เพิ่มแผนกอื่นๆ ได้ที่นี่ -->
+        </select>
+        <div class="invalid-feedback">กรุณาเลือกแผนก</div>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-warning w-100">
+          <i class="bi bi-send-fill"></i> แจ้งซ่อม
+        </button>
+      </div>
     </form>
   </div>
-  <script>
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzkrK9KYlubWWEE_Xu2pxVOQVOK11B9AKDmY8D8oc9ftzko1On7LaIZ89fvgS2ECgAX/exec'
-    var uid
-    $(document).ready(() => {
-      liff.init({
-        liffId: '1657934014-yMv0gDop',
-        withLoginOnExternalBrowser: true
-      })
-      liff.ready.then(() => {
-        console.log('liff ready')
-      })
-    })
 
-    function submit() {
-      $.LoadingOverlay('show')
-      let data = {
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+
+  <script>
+    const scriptUrl = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+
+    $(document).ready(() => {
+      liff.init({ liffId: 'YOUR_LIFF_ID', withLoginOnExternalBrowser: true })
+        .then(() => console.log('LIFF Initialized'));
+    });
+
+    function submitForm() {
+      $.LoadingOverlay('show');
+      const data = {
         opt: 'savedata',
         uid: liff.getDecodedIDToken().sub,
         name: $('#name').val(),
         phone: $('#phone').val(),
         device: $('#device').val(),
         problem: $('#problem').val(),
-        place: $('#place').val(),
-      }
-      $.ajax({
-        method: "POST",
-        url: scriptUrl,
-        data: data,
-        dataType: 'json',
-        success: function (res) {
-          $.LoadingOverlay('hide')
-          if (res.status == 'success') {
-            return Swal.fire({
-              icon: 'success',
-              title: 'แจ้งซ่อมเรียบร้อย',
-              allowOutsideClick: false,
-              confirmButtonText: 'ตกลง'
-            }).then(() => {
-              let flex = {
-                type: 'flex',
-                altText: 'success',
-                contents: {
-                  "type": "bubble",
-                  "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "✅✅แจ้งซ่อมเรียบร้อย✅✅",
-                        "weight": "bold",
-                        "size": "xl",
-                        "adjustMode": "shrink-to-fit",
-                        "align": "center"
-                      },
-                      {
-                        "type": "separator",
-                        "type": "text",
+        place: $('#place').val()
+      };
 
-                        "text": "☎️แจ้งรหัสงานซ่อมกลับเจ้าหน้าที่  ",
-
-
-                        "align": "center"
-
-                      },
-                      {
-                        "type": "text",
-
-                        "weight": "bold",
-                        "size": "xl",
-                        "text": "🚨รหัสงานซ่อม : " + res.id,
-
-                      },
-                      {
-                        "type": "text",
-                        "text": "อุปกรณ์ที่มีปัญหา : " + data.device,
-                        "wrap": true
-                      },
-                      {
-                        "type": "text",
-                        "text": "ปัญหาที่แจ้ง : " + data.problem,
-                        "wrap": true
-                      }
-
-                    ],
-                    "spacing": "md"
-                  }
-                }
-              }
-              liff.sendMessages([flex]).then(() => {
-                console.log("message sent");
-                liff.closeWindow()
-              })
-            })
-          }
-          return Swal.fire({
-            icon: 'error',
-            title: 'เกิดข้อผิดพลาด',
-            allowOutsideClick: false,
-            confirmButtonText: 'ตกลง'
-          })
-        },
-        error: function (err) {
-          console.log(err)
-          $.LoadingOverlay('hide')
-          alert('บันทึกข้อมูลไม่สำเร็จ')
+      $.post(scriptUrl, data, res => {
+        $.LoadingOverlay('hide');
+        if (res.status === 'success') {
+          Swal.fire({ icon: 'success', title: 'แจ้งซ่อมเรียบร้อย' }).then(() => {
+            liff.sendMessages([{
+              type: 'text',
+              text: `✅ แจ้งซ่อมเรียบร้อย\nรหัสงาน: ${res.id}\nอุปกรณ์: ${data.device}\nปัญหา: ${data.problem}`
+            }]).then(() => liff.closeWindow());
+          });
+        } else {
+          Swal.fire({ icon: 'error', title: 'เกิดข้อผิดพลาด' });
         }
+      }).fail(() => {
+        $.LoadingOverlay('hide');
+        Swal.fire({ icon: 'error', title: 'ส่งข้อมูลไม่สำเร็จ' });
       });
     }
 
-  </script>
-  <script>
     (() => {
-      'use strict'
-
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      const forms = document.querySelectorAll('.needs-validation')
-
-      // Loop over them and prevent submission
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          event.preventDefault()
-          if (!form.checkValidity()) {
-            event.stopPropagation()
-            form.classList.add('was-validated')
-            $('#myForm').find(":invalid").first().focus();
-          } else {
-            submit()
-          }
-
-        }, false)
-      })
-    })()
+      'use strict';
+      const form = document.querySelector('#myForm');
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        if (!form.checkValidity()) {
+          event.stopPropagation();
+          form.classList.add('was-validated');
+        } else {
+          submitForm();
+        }
+      }, false);
+    })();
   </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
-</body>
-
-
-<html>
-
-<body>
-  <div align="center">
-    <img border="0" src="https://img2.pic.in.th/pic/60bc7192ac918d169457719850927ef6.png" alt="coala" width="350" height="195">
-
 </body>
 
 </html>
