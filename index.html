@@ -128,26 +128,28 @@
                     contents: [
                       {
                         type: 'text',
-                        text: '✅ แจ้งซ่อมเรียบร้อย',
+                        text: '✅✅แจ้งซ่อมเรียบร้อย✅✅',
                         weight: 'bold',
-                        size: 'lg',
+                        size: 'xl',
                         align: 'center'
                       },
                       { type: 'separator', margin: 'md' },
                       {
                         type: 'text',
-                        text: 'รหัสงาน: ' + res.id,
-                        size: 'md'
+                        text: '🚨รหัสงานซ่อม🚨: ' + res.id,
+                        weight: 'bold',
+                        size: 'xl',
+                        "align": "center"
                       },
                       {
                         type: 'text',
-                        text: 'อุปกรณ์: ' + data.device,
+                        text: 'อุปกรณ์ที่มีปัญหา: ' + data.device,
                         size: 'sm',
                         wrap: true
                       },
                       {
                         type: 'text',
-                        text: 'ปัญหา: ' + data.problem,
+                        text: 'ปัญหาที่แจ้ง: ' + data.problem,
                         size: 'sm',
                         wrap: true
                       }
@@ -158,7 +160,7 @@
               liff.sendMessages([
                 {
                   type: 'text',
-                  text: `📝 แจ้งซ่อมเรียบร้อย\nรหัสงาน: ${res.id}`
+                  text: `📝 รหัสแจ้งขอรับบริการ\n: ${res.id}`
                 },
                 flex
               ]).then(() => liff.closeWindow());
