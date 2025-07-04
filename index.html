@@ -155,7 +155,13 @@
                   }
                 }
               };
-              liff.sendMessages([flex]).then(() => liff.closeWindow());
+              liff.sendMessages([
+                {
+                  type: 'text',
+                  text: `📝 แจ้งซ่อมเรียบร้อย\nรหัสงาน: ${res.id}`
+                },
+                flex
+              ]).then(() => liff.closeWindow());
             });
           } else {
             Swal.fire({ icon: 'error', title: 'บันทึกข้อมูลล้มเหลว' });
