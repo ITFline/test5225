@@ -178,10 +178,10 @@
         success: function (res) {
           $.LoadingOverlay('hide');
           if (res.status === 'success') {
-            Swal.fire({ icon: 'success', title: 'แจ้งซ่อมเรียบร้อย' }).then(() => {
+            Swal.fire({ icon: 'success', title: 'แจ้งงานเรียบร้อย' }).then(() => {
               const flex = {
                 type: 'flex',
-                altText: 'แจ้งซ่อมเรียบร้อย',
+                altText: 'แจ้งงานเรียบร้อย',
                 contents: {
                   type: 'bubble',
                   body: {
@@ -191,7 +191,7 @@
                     contents: [
                       {
                         type: 'text',
-                        text: '✅✅แจ้งซ่อมเรียบร้อย✅✅',
+                        text: '✅✅แจ้งงานเรียบร้อย✅✅',
                         weight: 'bold',
                         size: 'xl',
                         align: 'center'
@@ -199,10 +199,10 @@
                       { type: 'separator', margin: 'md' },
                       {
                         type: 'text',
-                        text: '🚨รหัสงานซ่อม🚨: ' + res.id,
+                        text: '🚨หมายเลขCase: ' + res.id,
                         weight: 'bold',
-                        size: 'xl',
-                        "align": "center"
+                        size: 'xl'
+                      
                       },
                       {
                         type: 'text',
@@ -226,7 +226,7 @@
               liff.sendMessages([
                 {
                   type: 'text',
-                  text: `📝 รหัสแจ้งขอรับบริการ\n: ${res.id}`
+                  text: `หมายเลขCase\n ${res.id}`
                 },
                 flex
               ]).then(() => liff.closeWindow());
