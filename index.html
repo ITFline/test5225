@@ -66,7 +66,6 @@
             <option value="">-----------เลือกหัวข้อที่คุณต้องการ-----------</option>
             <option value="โปรแกรม Error">▫️ โปรแกรม Error</option>
             <option value="เข้าใช้งานไดร์กลางของแผนกไม่ได้">▫️ เข้าใช้งานไดร์กลางของแผนกไม่ได้</option>
-            <!-- เพิ่ม option อื่น ๆ ตามที่มี -->
           </select>
         </div>
         <div class="col-12">
@@ -75,7 +74,6 @@
             <option value="">----------------กรุณาเลือก----------------</option>
             <option value="General Affairs">▫️ General Affairs</option>
             <option value="call center">▫️ call center</option>
-            <!-- เพิ่ม option อื่น ๆ ตามที่มี -->
           </select>
         </div>
         <div class="col-12 text-center">
@@ -103,16 +101,29 @@
     function submit() {
       $.LoadingOverlay('show');
 
+      const deviceVal = $('#device').val();
+
+      if (!["Computer PC", "Notebook", "Macintosh", "MacBook"].includes(deviceVal)) {
+        $.LoadingOverlay('hide');
+        Swal.fire({
+          icon: 'warning',
+          title: 'กรุณาเลือกอุปกรณ์ที่มีปัญหา',
+          text: 'ต้องเลือกเฉพาะ Computer PC, Notebook, Macintosh หรือ MacBook',
+          confirmButtonText: 'ตกลง'
+        });
+        return;
+      }
+
       liff.getProfile().then(profile => {
         let data = {
           opt: 'savedata',
           uid: profile.userId,
           name: $('#name').val(),
           phone: $('#phone').val(),
-          device: $('#device').val(),
+          device: deviceVal,
           problem: $('#problem').val(),
           place: $('#place').val(),
-        }
+        };
 
         $.ajax({
           method: "POST",
@@ -125,15 +136,12 @@
               Swal.fire({
                 icon: 'success',
                 title: 'แจ้งซ่อมเรียบร้อย',
-                allowOutsideClick: false,
                 confirmButtonText: 'ตกลง'
               }).then(() => {
                 liff.sendMessages([{
                   type: 'text',
                   text: `✅ แจ้งซ่อมเรียบร้อย\nรหัสงานซ่อม: ${res.id}\nอุปกรณ์: ${data.device}\nปัญหา: ${data.problem}`
-                }]).then(() => {
-                  liff.closeWindow();
-                });
+                }]).then(() => liff.closeWindow());
               });
             } else {
               Swal.fire({ icon: 'error', title: 'เกิดข้อผิดพลาด' });
